@@ -9,7 +9,20 @@
 <form method="Post" action="/articles"> -->
   <div class="form-group">
     <label for="author">Author:</label>
-    <input type="text" name="author" placeholder="writer of article" class="form-control">
+    <select name="authorId" class="form-control" id="author" required>
+      
+      <%authors.forEach(function(author){%>
+
+      <option value="<%=author.id%>">
+        <%=author.firstName%> <%=author.lastName%>
+      </option>
+
+
+      <%});%>
+
+      
+
+    </select>
   </div>
 <!-- </form>
 <form method="Post" action="/articles"> -->
