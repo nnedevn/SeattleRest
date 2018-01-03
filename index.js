@@ -16,9 +16,11 @@ app.use(function(req, res, next){
   next();
 });
 
-//Controller
+//Controllers
 app.use("/articles", require("./controllers/articles.js"));
 app.use("/authors", require("./controllers/authors.js"));
+app.use("/comments", require('./controllers/comments.js'));
+
 //Routes
 app.get("/", function(req, res) {
   res.render("home");

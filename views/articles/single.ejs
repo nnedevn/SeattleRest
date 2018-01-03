@@ -1,6 +1,28 @@
 <h2 class="text-center"><%= article.title %></h2>
-<em>By <%= article.author.firstName %></em>
+<em>By <%= article.author.firstName %> <%= article.author.lastName %></em>
 
 <p>
   <%= article.content %>
 </p>
+
+<em>Written on <%=moment(article.createdAt).calendar()%></em>
+
+<h3>Add Comment</h3>
+
+<form action="/comments" method="POST">
+  <div class="form-group">
+    <label for="content">Content</label>
+    <input type="text-area" name="content" class="form-control" placeholder="Your thoughtful comment">
+  </div>
+
+  <div class="form-group">
+    <label for="">Name</label>
+    <input class="form-control" name="name" required type="text" placeholder="Your Name">
+  </div>
+  <input type="hidden" name="articleId" value="<%= article.id %>">
+  <input type="submit" value="Submit" class="btn btn-info">
+</form>
+
+<h3>Comments</h3>
+
+<p>todo</p>

@@ -35,8 +35,6 @@ router.get("/new", function(req, res) {
   db.author.findAll().then(function(authors){
   res.render("articles/new", {authors:authors});  
   });
-
-  
 });
 
 
